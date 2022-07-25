@@ -1,0 +1,112 @@
+/* 基本样式 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  vertical-align: middle;
+}
+
+input {
+  border: none;
+  outline: none;
+  color: #333;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+
+/* 简写样式 */
+.border-box {
+  box-sizing: border-box;
+}
+.content-box {
+  box-sizing: content-box;
+}
+.po-a {
+  position: absolute;
+}
+.po-r {
+  position: relative;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.text-c {
+  text-align: center;
+}
+.fixed {
+  position: fixed;
+}
+.flex {
+  display: flex;
+}
+.j-sa {
+  justify-content: space-around;
+}
+.j-sb {
+  justify-content: space-between;
+}
+.j-center {
+  justify-content: center;
+}
+.j-start {
+  justify-content: start;
+}
+.j-end {
+  justify-content: end;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-1 {
+  flex: 1 auto;
+}
+.a-center {
+  align-items: center;
+}
+.grid {
+  display: grid;
+}
