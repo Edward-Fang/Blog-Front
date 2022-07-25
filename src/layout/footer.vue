@@ -4,16 +4,16 @@
       <div class="about">
         <h2>Edward</h2>
         <p>Front-end Developer</p>
-        <a href="#about">About Me</a>
+        <router-link to="about-me">About Me</router-link>
       </div>
       <div class="hr"></div>
       <div class="info flex a-center flex-column">
         <h3>More</h3>
         <ul>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><router-link to="skills">Skills</router-link></li>
+          <li><router-link to="services">Services</router-link></li>
+          <li><router-link to="portfolio">Portfolio</router-link></li>
+          <li><router-link to="contact">Contact</router-link></li>
         </ul>
       </div>
       <h3 class="hr"></h3>
@@ -21,13 +21,13 @@
         <h3>Follow</h3>
         <ul>
           <li>
-            <a><mdi-moon-full class="v-icon.small" /></a>
+            <el-link><mdi-moon-full class="v-icon small" /></el-link>
           </li>
           <li>
-            <a><mdi-moon-full class="v-icon.small" /></a>
+            <el-link><mdi-moon-full class="v-icon small" /></el-link>
           </li>
           <li>
-            <a><mdi-moon-full class="v-icon.small" /></a>
+            <el-link><mdi-moon-full class="v-icon small" /></el-link>
           </li>
         </ul>
       </div>
