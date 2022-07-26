@@ -1,6 +1,7 @@
 <template>
-  <div class="">
+  <div class="flex j-sb">
     <Main></Main>
+    <!-- <Aside></Aside> -->
   </div>
 </template>
 

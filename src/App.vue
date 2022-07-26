@@ -18,8 +18,8 @@ console.log(upperCase('hhh'));
 <style lang="scss" scoped>
 .page-container {
   width: 100%;
-  max-width: 1500px;
-  margin: 6rem auto;
+  max-width: 1300px;
+  margin: 5rem auto;
   padding: 0 45px;
 }
 </style>
