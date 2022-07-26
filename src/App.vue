@@ -11,9 +11,10 @@
 </template>
 
 <script setup lang="ts">
+import upperCase from 'lodash-es/upperCase'
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+console.log(upperCase('hhh'));
 </script>
-
 <style lang="scss" scoped>
 .page-container {
   width: 100%;
