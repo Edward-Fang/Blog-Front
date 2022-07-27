@@ -84,4 +84,10 @@
     }
   }
 }
+
+@media screen and (max-width: 1070px) {
+  .main {
+    width: 100%;
+  }
+}
 </style>

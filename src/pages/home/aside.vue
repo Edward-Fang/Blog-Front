@@ -25,7 +25,7 @@
 
 <style lang="scss" scoped>
 .aside {
-  max-width: 25%;
+  width: 23%;
 
   .aside-item {
     min-width: 250px;

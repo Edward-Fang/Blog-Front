@@ -1,10 +1,16 @@
 <template>
-  <div class="flex j-sb">
+  <div class="home-container flex j-sb">
     <Main></Main>
-    <!-- <Aside></Aside> -->
+    <Aside></Aside>
   </div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media screen and (max-width: 1070px) {
+  .home-container {
+    flex-direction: column;
+  }
+}
+</style>

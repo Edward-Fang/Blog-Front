@@ -9,9 +9,17 @@
     "format": "prettier --write \"src/**/*.ts\""
   },
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-error": "^1.1.13",
+    "apollo-link-http": "^1.5.17",
     "dayjs": "^1.11.4",
     "element-plus": "^2.2.10",
+    "graphql": "^15.8.0",
+    "graphql-tag": "^2.12.6",
     "lodash-es": "^4.17.21",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.17",
     "sass": "^1.54.0",
     "vue": "^3.2.37",

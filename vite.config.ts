@@ -10,6 +10,18 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const pathSrc = path.resolve(__dirname, 'src')
 
 export default defineConfig({
+  server: {
+    port: 3000,
+    cors: true,
+    proxy: {
+      '/api': {
+        // 请求的后端地址
+        target: 'http://localhost/5000',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '') // 不可以省略 rewrite
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': pathSrc
