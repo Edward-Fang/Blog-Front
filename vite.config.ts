@@ -11,7 +11,7 @@ const pathSrc = path.resolve(__dirname, 'src')
 
 export default defineConfig({
   server: {
-    port: 3000,
+    port: 5001,
     cors: true,
     proxy: {
       '/api': {

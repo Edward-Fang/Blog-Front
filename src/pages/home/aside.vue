@@ -1,11 +1,12 @@
 <template>
   <div class="aside">
     <div class="aside-item flex a-center flex-column">
-      <div class="avatar">
-        <a href="#">
-          <img src="src/assets/images/avatar.jpg" alt="" />
-        </a>
-      </div>
+      <el-avatar
+        shape="square"
+        :size="100"
+        fit="fill"
+        src="src/assets/images/avatar.jpg"
+      />
       <div class="message flex flex-column">
         <h5>Edward</h5>
         <h6>前端学习者</h6>
@@ -17,7 +18,18 @@
         <el-link href="#"><mdi-folder-search class="v-icon medium" /></el-link>
       </div>
     </div>
-    <div class="aside-item"></div>
+    <div class="aside-item">
+      <el-card class="">
+        <template #header>
+          <div class="">
+            <span>Card name</span>
+          </div>
+        </template>
+        <div v-for="o in 4" :key="o" class="">
+          {{ 'List item ' + o }}
+        </div>
+      </el-card>
+    </div>
   </div>
 </template>
 
@@ -29,29 +41,14 @@
 
   .aside-item {
     min-width: 250px;
-    padding: 30px 50px;
+    padding: 50px;
     margin-bottom: 30px;
     background-color: var(--card-bg-color);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
 
-    .avatar {
-      width: 100px;
-      margin-bottom: 30px;
-
-      img {
-        width: 100%;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        transition: all 0.4s linear;
-      }
-
-      img:hover {
-        transform: rotate(360deg);
-      }
-    }
-
     .message {
+      margin-top: 30px;
       text-align: center;
       h5 {
         margin-bottom: 10px;
@@ -74,6 +71,12 @@
       width: 70%;
       font-size: larger;
     }
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .aside {
+    display: flex;
   }
 }
 </style>
