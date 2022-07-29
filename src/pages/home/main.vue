@@ -1,11 +1,11 @@
 <template>
   <div class="main flex flex-column">
-    <div class="article flex" v-for="(item, index) in 4">
+    <div class="article flex" v-for="(item, index) in posts" :key="index">
       <div class="left">
         <a href="#"><img src="src/assets/images/avatar.jpg" alt="" /></a>
       </div>
       <div class="right">
-        <a href="#"><h2>Butterfly 安裝文檔(一) 快速開始</h2></a>
+        <a href="#"><h2>{{item.title}}</h2></a>
         <h5>置頂|發表於2020-5-28|Docs文檔|0 條評論</h5>
         <h4>
           📖 本教程更新於 2022 年 05 月📖 本教程更新於 2022 年 05 月 📖
@@ -16,7 +16,23 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import graphql from '@/api'
+
+const posts = ref(<any>[])
+const getPosts = async (limit: number, offset: number) => {
+  const res = await graphql.findAllPosts({
+    pagination: {
+      limit,
+      offset
+    }
+  })
+  const resData = res.data?.findAllPosts ?? []
+  posts.value = resData
+}
+
+onMounted(() => getPosts(0, 0))
+</script>
 
 <style lang="scss" scoped>
 .main {

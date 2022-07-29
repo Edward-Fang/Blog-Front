@@ -1,26 +1,14 @@
-import client from './index'
-import gql from 'graphql-tag'
+import ApolloClient from 'apollo-client'
+import { createHttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
-const getPosts = (variables = {}) => {
-  console.log(variables)
-  return client.query({
-    query: gql`
-      query($pagination: PaginationQueryDto!){
-        findAllPosts(pagination: $pagination){
-          author
-          content
-          createAt
-          id
-          isPublic
-          posterUrl
-          tag
-          title
-          updateAt
-        }
-      }
-    `,
-    variables
-  })
-}
+const httpLink = createHttpLink({
+  uri: 'http://localhost:5000/graphql'
+})
 
-export default getPosts
+const apolloClient = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+})
+
+export default apolloClient

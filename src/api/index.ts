@@ -1,14 +1,5 @@
-import ApolloClient from 'apollo-client'
-import { createHttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import posts from './postsl'
 
-const httpLink = createHttpLink({
-  uri: 'http://localhost:5000/graphql'
-})
-
-const apolloClient = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache()
-})
-
-export default apolloClient
+export default {
+  ...posts
+}
