@@ -21,13 +21,19 @@
         <h3>Follow</h3>
         <ul>
           <li>
-            <el-link><mdi-moon-full class="v-icon small" /></el-link>
+            <el-link :underline="false"
+              ><mdi-moon-full class="v-icon small"
+            /></el-link>
           </li>
           <li>
-            <el-link><mdi-moon-full class="v-icon small" /></el-link>
+            <el-link :underline="false"
+              ><mdi-moon-full class="v-icon small"
+            /></el-link>
           </li>
           <li>
-            <el-link><mdi-moon-full class="v-icon small" /></el-link>
+            <el-link :underline="false"
+              ><mdi-moon-full class="v-icon small"
+            /></el-link>
           </li>
         </ul>
       </div>

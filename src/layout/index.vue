@@ -4,7 +4,10 @@
       <Header @show="showDialog"></Header>
     </el-header>
     <SearchDialog ref="searchDialog"></SearchDialog>
-    <slot></slot>
+    <section class="page-container flex">
+      <slot class="slot"></slot>
+      <Aside v-show="ifShow" />
+    </section>
     <el-footer>
       <Footer></Footer>
     </el-footer>
@@ -16,6 +19,16 @@ const searchDialog = ref()
 const showDialog = () => {
   searchDialog.value.pop()
 }
+
+const ifShow = ref(true)
+const router = useRouter()
+watch(
+  () => router.currentRoute.value.path,
+  (newValue, oldValue) => {
+    ifShow.value = newValue === '/article' ? false : true
+  },
+  { immediate: true }
+)
 </script>
 
 <style lang="scss" scoped>
@@ -37,7 +50,40 @@ const showDialog = () => {
   }
 }
 
+.page-container {
+  width: 100%;
+  margin: 5rem auto;
+  padding: 0 45px;
+
+  .slot {
+    width: 100%;
+  }
+}
+
 .el-footer {
   padding: unset;
+}
+
+/*=======Media query max-width 1070px=======*/
+@media screen and (max-width: 950px) {
+  .page-container {
+    // max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*=======Media query max-width 1680px=======*/
+@media screen and (min-width: 1500px) {
+  .page-container {
+    max-width: 1200px;
+  }
+}
+
+/*=======Media query max-width 1920px=======*/
+@media screen and (min-width: 1920px) {
+  .page-container {
+    max-width: 1600px;
+  }
 }
 </style>

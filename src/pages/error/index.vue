@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="">error page</div> -->
   <el-empty>
     <el-button :image-size="250" type="primary" @click="goHome"
       >点击返回主页面</el-button

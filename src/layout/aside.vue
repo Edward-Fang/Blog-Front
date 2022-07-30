@@ -13,9 +13,9 @@
         <span>骑行、电影</span>
       </div>
       <div class="contact flex j-sa">
-        <el-link href="#"><mdi-folder-search class="v-icon medium" /></el-link>
-        <el-link href="#"><mdi-folder-search class="v-icon medium" /></el-link>
-        <el-link href="#"><mdi-folder-search class="v-icon medium" /></el-link>
+        <el-link :underline="false"><mdi-folder-search class="v-icon medium" /></el-link>
+        <el-link :underline="false"><mdi-folder-search class="v-icon medium" /></el-link>
+        <el-link :underline="false"><mdi-folder-search class="v-icon medium" /></el-link>
       </div>
     </div>
     <div class="aside-item">
@@ -37,7 +37,8 @@
 
 <style lang="scss" scoped>
 .aside {
-  width: 23%;
+  width: 25%;
+  margin-left: 30px;
 
   .aside-item {
     min-width: 250px;

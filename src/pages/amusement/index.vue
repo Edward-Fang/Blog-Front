@@ -1,8 +1,8 @@
 <template>
-  <div class="main">message-board page</div>
+  <div class="main">amusement page</div>
 </template>
 
-<script></script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .main {
@@ -14,4 +14,5 @@
   box-shadow: var(--box-shadow);
   background-color: var(--card-bg-color);
   overflow: hidden;
-}</style>
+}
+</style>

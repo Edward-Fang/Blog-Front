@@ -1,8 +1,13 @@
 <template>
-  <div class="main">message-board page</div>
+  <div class="main">article page</div>
 </template>
 
-<script></script>
+<script lang="ts" setup>
+onMounted(() => {
+  const route = useRoute()
+  console.log(route.query.id)
+})
+</script>
 
 <style lang="scss" scoped>
 .main {
@@ -14,4 +19,5 @@
   box-shadow: var(--box-shadow);
   background-color: var(--card-bg-color);
   overflow: hidden;
-}</style>
+}
+</style>

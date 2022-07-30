@@ -19,7 +19,7 @@
         <mdi-timeline-clock class="v-icon medium" />
         <span>时间轴</span></router-link
       >
-      <router-link to="/article">
+      <router-link to="/amusement">
         <mdi-motion-play class="v-icon medium" /><span>娱乐</span></router-link
       >
       <router-link to="/about-me">
