@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     App: typeof import('./App.vue')['default']
     Article: typeof import('./pages/article/index.vue')['default']
     Aside: typeof import('./layout/aside.vue')['default']
+    AsideConfig: typeof import('./components/asideConfig/index.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']

@@ -1,18 +1,16 @@
 <template>
   <div class="main flex flex-column">
-    <!-- <div class="article flex" v-for="(item, index) in posts" :key="index"> -->
-    <div class="article flex" v-for="(item, index) in 4" @click="goPosts(item)">
+    <div class="article flex" v-for="(item, index) in posts" :key="index" @click="goPosts(item.id)">
       <div class="left">
         <a href="#"><img src="src/assets/images/avatar.jpg" alt="" /></a>
       </div>
       <div class="right">
         <a href="#"
-          ><h2>{{ item }}</h2></a
+          ><h2>{{ item.title }}</h2></a
         >
-        <h5>置頂|發表於2020-5-28|Docs文檔|0 條評論</h5>
+        <h5>发表于{{item.createAt}}</h5>
         <h4>
-          📖 本教程更新於 2022 年 05 月📖 本教程更新於 2022 年 05 月 📖
-          本教程更新於 2022 年 05 月📖 本教程更新於 2022 年 05 月
+          {{ item.introduction }}
         </h4>
       </div>
     </div>
@@ -32,11 +30,15 @@ const getPosts = async (limit: number, offset: number) => {
   })
   const resData = res.data?.findAllPosts ?? []
   posts.value = resData
+  console.log(resData)
 }
+onMounted(() => {
+  getPosts(0, 0)
+})
 
 const router = useRouter()
-const goPosts = (item: number) => {
-  router.push({ path: '/posts', query: { id: item } })
+const goPosts = (id: number) => {
+  router.push({ path: '/posts', query: { id } })
 }
 </script>
 
@@ -54,6 +56,7 @@ const goPosts = (item: number) => {
     overflow: hidden;
 
     .left {
+      width: 35%;
       height: 100%;
       aspect-ratio: 1/0.5;
       overflow: hidden;
@@ -72,7 +75,7 @@ const goPosts = (item: number) => {
     }
 
     .right {
-      width: 100%;
+      max-width: 65%;
       padding: 65px 80px;
       margin: auto;
 

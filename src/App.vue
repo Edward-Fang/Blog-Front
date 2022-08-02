@@ -2,8 +2,7 @@
   <ElConfigProvider :locale="zhCn">
     <Layout>
       <router-view></router-view>
-      <ScrollToTop></ScrollToTop>
-      <ThemeBtn></ThemeBtn>
+      <AsideConfig />
     </Layout>
   </ElConfigProvider>
 </template>

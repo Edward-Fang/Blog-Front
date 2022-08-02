@@ -3,9 +3,20 @@
 </template>
 
 <script lang="ts" setup>
-onMounted(() => {
+import graphql from '@/api'
+
+const posts = ref(<any>[])
+const getPost = async (id: String) => {
+  const res = await graphql.findOnePost({
+    id
+  })
+  const resData = res.data?.findOnePost ?? []
+  posts.value = resData
+  console.log(resData)
+}
+onMounted(async () => {
   const route = useRoute()
-  console.log(route.query.id)
+  await getPost(String(route.query.id))
 })
 </script>
 
