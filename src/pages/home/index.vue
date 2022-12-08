@@ -20,21 +20,40 @@
 <script setup lang="ts">
 import graphql from '@/api'
 
-const posts = ref(<any>[])
-const getPosts = async (limit: number, offset: number) => {
-  const res = await graphql.findAllPosts({
-    pagination: {
-      limit,
-      offset
-    }
-  })
-  const resData = res.data?.findAllPosts ?? []
-  posts.value = resData
-  console.log(resData)
-}
-onMounted(() => {
-  getPosts(0, 0)
-})
+const posts = ref(<any>[
+  {
+    id: 1,
+    title: 1,
+    createAt: 1,
+    introduction: 1
+  },
+  {
+    id: 1,
+    title: 1,
+    createAt: 1,
+    introduction: 1
+  },
+  {
+    id: 1,
+    title: 1,
+    createAt: 1,
+    introduction: 1
+  }
+])
+// const getPosts = async (limit: number, offset: number) => {
+//   const res = await graphql.findAllPosts({
+//     pagination: {
+//       limit,
+//       offset
+//     }
+//   })
+//   const resData = res.data?.findAllPosts ?? []
+//   posts.value = resData
+//   console.log(resData)
+// }
+// onMounted(() => {
+//   getPosts(0, 0)
+// })
 
 const router = useRouter()
 const goPosts = (id: number) => {
