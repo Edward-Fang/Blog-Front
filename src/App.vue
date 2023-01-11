@@ -12,4 +12,3 @@
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 // console.log(upperCase('hhh'))
 </script>
-<style lang="scss"></style>

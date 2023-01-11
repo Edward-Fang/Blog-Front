@@ -2,7 +2,7 @@
   <div class="main">menu page</div>
 </template>
 
-<script></script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .main {

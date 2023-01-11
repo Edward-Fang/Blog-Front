@@ -1,5 +1,5 @@
 import Home from '@/pages/home/index.vue'
-import Posts from '@/pages/posts/index.vue'
+import Post from '@/pages/post/index.vue'
 import Menu from '@/pages/menu/index.vue'
 import Amusement from '@/pages/amusement/index.vue'
 import MessageBoard from '@/pages/message-board/index.vue'
@@ -23,9 +23,9 @@ const routes = [
     name: 'menu'
   },
   {
-    path: '/posts/:id?',
-    component: Posts,
-    name: 'posts'
+    path: '/post',
+    component: Post,
+    name: 'post'
   },
   {
     path: '/amusement',

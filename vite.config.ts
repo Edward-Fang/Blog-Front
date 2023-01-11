@@ -16,7 +16,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         // 请求的后端地址
-        target: 'http://localhost/5000',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, '') // 不可以省略 rewrite
       }
@@ -31,7 +31,7 @@ export default defineConfig({
     vue(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      dts: path.resolve(pathSrc, 'auto-import.d.ts'),
+      dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
       imports: ['vue', 'vue-router', 'pinia']
     }),
     Components({

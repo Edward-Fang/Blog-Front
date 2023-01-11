@@ -3,21 +3,17 @@
 </template>
 
 <script lang="ts" setup>
-import graphql from '@/api'
+import axios from '@/api'
 
-const posts = ref(<any>[])
-const getPost = async (id: String) => {
-  const res = await graphql.findOnePost({
-    id
-  })
-  const resData = res.data?.findOnePost ?? []
-  posts.value = resData
+const post = ref(<any>{})
+const getPost = async (id: number) => {
+  const res = await axios.getPostById(id)
+  const resData = res.data ?? {}
+  post.value = resData
   console.log(resData)
 }
-onMounted(async () => {
-  const route = useRoute()
-  await getPost(String(route.query.id))
-})
+const route: any = useRoute()
+getPost(route.query.id)
 </script>
 
 <style lang="scss" scoped>

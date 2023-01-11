@@ -1,6 +1,11 @@
 <template>
   <div class="main flex flex-column">
-    <div class="article flex" v-for="(item, index) in posts" :key="index" @click="goPosts(item.id)">
+    <div
+      class="article flex"
+      v-for="(item, index) in posts"
+      :key="index"
+      @click="goPost(item.id)"
+    >
       <div class="left">
         <a href="#"><img src="src/assets/images/avatar.jpg" alt="" /></a>
       </div>
@@ -8,9 +13,9 @@
         <a href="#"
           ><h2>{{ item.title }}</h2></a
         >
-        <h5>发表于{{item.createAt}}</h5>
+        <h5>发表于{{ item.createAt }}</h5>
         <h4>
-          {{ item.introduction }}
+          {{ item.introduction  }}
         </h4>
       </div>
     </div>
@@ -18,46 +23,39 @@
 </template>
 
 <script setup lang="ts">
-import graphql from '@/api'
+import axios from '@/api'
 
 const posts = ref(<any>[
-  {
-    id: 1,
-    title: 1,
-    createAt: 1,
-    introduction: 1
-  },
-  {
-    id: 1,
-    title: 1,
-    createAt: 1,
-    introduction: 1
-  },
-  {
-    id: 1,
-    title: 1,
-    createAt: 1,
-    introduction: 1
-  }
+  // {
+  //   id: 1,
+  //   title: 1,
+  //   createAt: 1,
+  //   introduction: 1
+  // },
+  // {
+  //   id: 1,
+  //   title: 1,
+  //   createAt: 1,
+  //   introduction: 1
+  // },
+  // {
+  //   id: 1,
+  //   title: 1,
+  //   createAt: 1,
+  //   introduction: 1
+  // }
 ])
-// const getPosts = async (limit: number, offset: number) => {
-//   const res = await graphql.findAllPosts({
-//     pagination: {
-//       limit,
-//       offset
-//     }
-//   })
-//   const resData = res.data?.findAllPosts ?? []
-//   posts.value = resData
-//   console.log(resData)
-// }
-// onMounted(() => {
-//   getPosts(0, 0)
-// })
+const getPosts = async (limit: number, offset: number) => {
+  const res = await axios.getPosts({limit, offset})
+  posts.value = res.data ?? []
+}
+onMounted(() => {
+  getPosts(0, 0)
+})
 
 const router = useRouter()
-const goPosts = (id: number) => {
-  router.push({ path: '/posts', query: { id } })
+const goPost = (id: number) => {
+  router.push({ path: '/post', query: { id } })
 }
 </script>
 
