@@ -6,7 +6,7 @@
     <SearchDialog ref="searchDialog"></SearchDialog>
     <section class="page-container flex">
       <slot class="slot"></slot>
-      <Aside v-show="ifShow" />
+      <slot name="aside"></slot>
     </section>
     <el-footer>
       <Footer></Footer>
@@ -21,14 +21,7 @@ const showDialog = () => {
 }
 
 const ifShow = ref(true)
-const router = useRouter()
-watch(
-  () => router.currentRoute.value.path,
-  (newValue, oldValue) => {
-    ifShow.value = newValue === '/article' ? false : true
-  },
-  { immediate: true }
-)
+
 </script>
 
 <style lang="scss" scoped>

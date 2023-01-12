@@ -22,17 +22,17 @@
         <ul>
           <li>
             <el-link :underline="false"
-              ><mdi-moon-full class="v-icon small"
+              ><mdi-moon-full class="small"
             /></el-link>
           </li>
           <li>
             <el-link :underline="false"
-              ><mdi-moon-full class="v-icon small"
+              ><mdi-moon-full class="small"
             /></el-link>
           </li>
           <li>
             <el-link :underline="false"
-              ><mdi-moon-full class="v-icon small"
+              ><mdi-moon-full class="small"
             /></el-link>
           </li>
         </ul>

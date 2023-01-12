@@ -3,31 +3,31 @@
     <router-link to="/home" class="logo">Edward's Blog</router-link>
     <div class="navigation flex a-center">
       <el-link :underline="false" @click="showPopup" href="javascript:void(0);">
-        <mdi-folder-search class="v-icon medium" />
+        <mdi-folder-search class="medium" />
         <span>搜索</span></el-link
       >
       <router-link to="/home">
-        <mdi-home class="v-icon medium" />
+        <mdi-home class="medium" />
         <span>主页</span>
       </router-link>
       <router-link to="/menu">
-        <mdi-microsoft-xbox-controller-menu class="v-icon medium" /><span
+        <mdi-microsoft-xbox-controller-menu class="medium" /><span
           >目录</span
         ></router-link
       >
       <router-link to="/time-line">
-        <mdi-timeline-clock class="v-icon medium" />
+        <mdi-timeline-clock class="medium" />
         <span>时间轴</span></router-link
       >
       <router-link to="/amusement">
-        <mdi-motion-play class="v-icon medium" /><span>娱乐</span></router-link
+        <mdi-motion-play class="medium" /><span>娱乐</span></router-link
       >
       <router-link to="/about-me">
-        <mdi-account-box-multiple class="v-icon medium" />
+        <mdi-account-box-multiple class="medium" />
         <span>关于我</span></router-link
       >
       <router-link to="/message-board">
-        <mdi-message-text class="v-icon medium" />
+        <mdi-message-text class="medium" />
         <span>留言板</span></router-link
       >
     </div>

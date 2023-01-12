@@ -2,10 +2,10 @@ import Home from '@/pages/home/index.vue'
 import Post from '@/pages/post/index.vue'
 import Menu from '@/pages/menu/index.vue'
 import Amusement from '@/pages/amusement/index.vue'
-import MessageBoard from '@/pages/message-board/index.vue'
-import TimeLine from '@/pages/time-line/index.vue'
+import MessageBoard from '@/pages/messageboard/index.vue'
+import TimeLine from '@/pages/timeline/index.vue'
 import Error from '@/pages/error/index.vue'
-import AboutMe from '@/pages/about-me/index.vue'
+import AboutMe from '@/pages/aboutme/index.vue'
 
 const routes = [
   {

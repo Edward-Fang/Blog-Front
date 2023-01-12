@@ -41,7 +41,7 @@ export default defineConfig({
         // 自动引入图标
         IconsResolver({
           prefix: false,
-          enabledCollections: ['ep', 'mdi']
+          enabledCollections: ['mdi'] // 可选的，默认启用Iconify支持的所有集合
         })
       ],
       // 指定组件位置，默认是src
@@ -53,7 +53,8 @@ export default defineConfig({
     }),
     Icons({
       autoInstall: true,
-      compiler: 'vue3'
+      compiler: 'vue3',
+      defaultClass: '-global-icon' // 默认类名
     })
   ]
 })
