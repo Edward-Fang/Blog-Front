@@ -1,15 +1,18 @@
 <template>
   <el-container>
     <el-header>
-      <Header @show="showDialog"></Header>
+      <Header @show="showDialog" />
     </el-header>
     <SearchDialog ref="searchDialog"></SearchDialog>
     <section class="page-container flex">
-      <slot class="slot"></slot>
-      <slot name="aside"></slot>
+      <router-view v-slot="{ Component }">
+        <transition name="fade-transform" mode="out-in">
+          <component :is="Component"/>
+        </transition>
+      </router-view>
     </section>
     <el-footer>
-      <Footer></Footer>
+      <Footer />
     </el-footer>
   </el-container>
 </template>
@@ -21,7 +24,6 @@ const showDialog = () => {
 }
 
 const ifShow = ref(true)
-
 </script>
 
 <style lang="scss" scoped>
@@ -47,10 +49,6 @@ const ifShow = ref(true)
   width: 100%;
   margin: 5rem auto;
   padding: 0 45px;
-
-  .slot {
-    width: 100%;
-  }
 }
 
 .el-footer {

@@ -13,9 +13,15 @@
         <span>骑行、电影</span>
       </div>
       <div class="contact flex j-sa">
-        <el-link :underline="false"><mdi-folder-search class="medium" /></el-link>
-        <el-link :underline="false"><mdi-folder-search class="medium" /></el-link>
-        <el-link :underline="false"><mdi-folder-search class="medium" /></el-link>
+        <el-link :underline="false">
+          <icon icon="mdi:github" size="medium" />
+        </el-link>
+        <el-link :underline="false"
+          ><icon icon="mdi:qqchat" size="medium"
+        /></el-link>
+        <el-link :underline="false"
+          ><icon icon="mdi:wechat" size="medium"
+        /></el-link>
       </div>
     </div>
     <div class="aside-item">

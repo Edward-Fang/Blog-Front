@@ -1,12 +1,10 @@
 <template>
   <ElConfigProvider :locale="zhCn">
-    <Layout>
-      <router-view></router-view>
-      <template v-slot:aside>
-        <Aside v-show="showAside"/>
-      </template>
-    </Layout>
-    <AsideConfig v-model="showAside"/>
+    <router-view />
+
+    <!-- <Aside v-show="showAside" /> -->
+
+    <AsideConfig v-model="showAside" />
   </ElConfigProvider>
 </template>
 

@@ -3,31 +3,31 @@
     <router-link to="/home" class="logo">Edward's Blog</router-link>
     <div class="navigation flex a-center">
       <el-link :underline="false" @click="showPopup" href="javascript:void(0);">
-        <mdi-folder-search class="medium" />
+        <icon icon="mdi:folder-search" size="medium" />
         <span>搜索</span></el-link
       >
       <router-link to="/home">
-        <mdi-home class="medium" />
+        <icon icon="mdi:home" size="medium" />
         <span>主页</span>
       </router-link>
       <router-link to="/menu">
-        <mdi-microsoft-xbox-controller-menu class="medium" /><span
-          >目录</span
-        ></router-link
+        <icon icon="mdi:microsoft-xbox-controller-menu" size="medium" />
+        <span>目录</span></router-link
       >
-      <router-link to="/time-line">
-        <mdi-timeline-clock class="medium" />
+      <router-link to="/timeline">
+        <icon icon="mdi:timeline-clock" size="medium" />
         <span>时间轴</span></router-link
       >
       <router-link to="/amusement">
-        <mdi-motion-play class="medium" /><span>娱乐</span></router-link
+        <icon icon="mdi:motion-play" size="medium" />
+        <span>娱乐</span></router-link
       >
-      <router-link to="/about-me">
-        <mdi-account-box-multiple class="medium" />
+      <router-link to="/aboutme">
+        <icon icon="mdi:account-box-multiple" size="medium" />
         <span>关于我</span></router-link
       >
-      <router-link to="/message-board">
-        <mdi-message-text class="medium" />
+      <router-link to="/messageboard">
+        <icon icon="mdi:message-text" size="medium" />
         <span>留言板</span></router-link
       >
     </div>

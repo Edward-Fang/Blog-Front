@@ -20,7 +20,7 @@ input {
 
 ul,
 ol {
-  list-style: none;
+  padding-left: 1.6rem;
 }
 
 em,
@@ -109,4 +109,9 @@ input {
 }
 .grid {
   display: grid;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

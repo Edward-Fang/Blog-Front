@@ -1,15 +1,17 @@
 <template>
   <div class="config-container">
-    <div class="btn flex a-center j-center" @click="hideAside">
-      <mdi-arrow-right-circle v-if="modelValue"/>
-      <mdi-arrow-left-circle  v-else/>
+    <div class="btn flex-center" @click="hideAside">
+      <icon
+        :icon="modelValue ? 'mdi:arrow-right-circle' : 'mdi:arrow-left-circle'"
+      />
     </div>
-    <div class="btn flex a-center j-center" @click="changeTheme">
-      <mdi-white-balance-sunny v-if="sun" />
-      <mdi-weather-night v-else />
+    <div class="btn flex-center" @click="changeTheme">
+      <icon
+        :icon="sun ? 'mdi:moon-full' : 'mdi:white-balance-sunny'"
+      />
     </div>
-    <div class="btn flex a-center j-center" @click="scrollToTop">
-      <mdi-arrow-up-circle />
+    <div class="btn flex-center" @click="scrollToTop">
+      <icon icon="mdi:arrow-up-circle" />
     </div>
   </div>
 </template>
@@ -40,7 +42,9 @@ const changeTheme = () => {
   localStorage.setItem('save-theme', getCurrentTheme())
   const savedTheme = localStorage.getItem('save-theme')
   if (savedTheme) {
-    document.body.classList[savedTheme === 'dark' ? 'add' : 'remove']('dark-theme')
+    document.body.classList[savedTheme === 'dark' ? 'add' : 'remove'](
+      'dark-theme'
+    )
   }
   sun.value = savedTheme === 'dark'
 }

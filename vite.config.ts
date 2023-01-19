@@ -1,4 +1,4 @@
-import * as path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
@@ -7,7 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
-const pathSrc = path.resolve(__dirname, 'src')
+const pathSrc = resolve(__dirname, 'src')
 
 export default defineConfig({
   server: {
@@ -31,7 +31,7 @@ export default defineConfig({
     vue(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
+      dts: resolve(pathSrc, 'auto-imports.d.ts'),
       imports: ['vue', 'vue-router', 'pinia']
     }),
     Components({
@@ -49,7 +49,7 @@ export default defineConfig({
       extensions: ['vue'],
       // 搜索子目录
       deep: true,
-      dts: path.resolve(pathSrc, 'components.d.ts')
+      dts: resolve(pathSrc, 'components.d.ts')
     }),
     Icons({
       autoInstall: true,
