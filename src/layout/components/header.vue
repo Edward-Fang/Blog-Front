@@ -6,41 +6,28 @@
         <icon icon="mdi:folder-search" size="medium" />
         <span>搜索</span></el-link
       >
-      <router-link to="/home">
-        <icon icon="mdi:home" size="medium" />
-        <span>主页</span>
-      </router-link>
-      <router-link to="/menu">
-        <icon icon="mdi:microsoft-xbox-controller-menu" size="medium" />
-        <span>目录</span></router-link
-      >
-      <router-link to="/timeline">
-        <icon icon="mdi:timeline-clock" size="medium" />
-        <span>时间轴</span></router-link
-      >
-      <router-link to="/amusement">
-        <icon icon="mdi:motion-play" size="medium" />
-        <span>娱乐</span></router-link
-      >
-      <router-link to="/aboutme">
-        <icon icon="mdi:account-box-multiple" size="medium" />
-        <span>关于我</span></router-link
-      >
-      <router-link to="/messageboard">
-        <icon icon="mdi:message-text" size="medium" />
-        <span>留言板</span></router-link
-      >
+      <template v-for="item in allRoutes">
+        <template v-if="item.meta!.show">
+          <router-link :to="item.path">
+            <icon :icon="item.meta!.icon" size="medium" />
+            <span>{{ item.meta!.name }}</span>
+          </router-link>
+        </template>
+      </template>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits(['show'])
+
+const allRoutes = useRouter().getRoutes()
+
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.el-header')!
   header.classList.toggle('sticky', window.scrollY > 0)
 })
 
-const emit = defineEmits(['show'])
 const showPopup = () => {
   emit('show')
 }

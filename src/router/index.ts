@@ -1,17 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { basicRoutes } from './routes'
+import { systemRoutes, basicRoutes, asyncRoutes } from './routes'
 import NProgress from '@/utils/nprogress'
 import { changeTitle } from '@/utils'
+import { getToken } from '@/utils/auth'
 
+const routes = [...systemRoutes, ...basicRoutes]
 const router = createRouter({
   history: createWebHistory(),
-  routes: basicRoutes,
+  routes,
   scrollBehavior(to, from, savedPosition) {
     return {
       top: 0
     }
   }
 })
+
+export const addRoutes = () => {
+  asyncRoutes.forEach(item => {
+    router.addRoute(item)
+  })
+}
+
+if(getToken()) {
+  addRoutes()
+}
 
 router.beforeEach((to, _from, next) => {
   NProgress.start()
@@ -20,7 +32,7 @@ router.beforeEach((to, _from, next) => {
   // } else {
   //   next('/login') // 全部重定向到登录页
   // }
-  to.meta.title ? changeTitle(to.meta.title) : "Edward's Blog" // 动态title
+  to.meta.name ? changeTitle(to.meta.name) : "Edward's Blog" // 动态title
 })
 
 router.afterEach((to, _from) => {

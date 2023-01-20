@@ -70,15 +70,14 @@ html {
   scroll-behavior: smooth;
 }
 
+#app, body, html {
+  height: 100%;
+}
+
 body {
   color: var(--first-color);
   background-color: var(--body-bg-color);
-  margin: 2rem 0 0 0;
   transition: 0.5s ease;
-
-  // background: linear-gradient(-45deg, #ee7752, #e73ce7, #23a6d5, #23d5ab);
-  // background-size: 1000%, 1000%;
-  // animation: gradient 15s ease infinite;
 }
 
 @keyframes gradient {

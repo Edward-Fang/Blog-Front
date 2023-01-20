@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@iconify-json/mdi': ^1.1.41
   '@iconify/vue': ^4.0.2
+  '@types/js-cookie': ^3.0.2
   '@types/lodash-es': ^4.17.6
   '@types/marked': ^4.0.8
   '@types/node': ^18.11.18
@@ -12,6 +13,7 @@ specifiers:
   dayjs: ^1.11.7
   element-plus: ^2.2.28
   highlight.js: ^11.7.0
+  js-cookie: ^3.0.1
   lodash-es: ^4.17.21
   marked: ^4.2.12
   md-editor-v3: ^2.7.2
@@ -34,6 +36,7 @@ dependencies:
   dayjs: registry.npmmirror.com/dayjs/1.11.7
   element-plus: registry.npmmirror.com/element-plus/2.2.28_vue@3.2.45
   highlight.js: registry.npmmirror.com/highlight.js/11.7.0
+  js-cookie: registry.npmmirror.com/js-cookie/3.0.1
   lodash-es: registry.npmmirror.com/lodash-es/4.17.21
   marked: registry.npmmirror.com/marked/4.2.12
   md-editor-v3: registry.npmmirror.com/md-editor-v3/2.7.2
@@ -46,6 +49,7 @@ dependencies:
 devDependencies:
   '@iconify-json/mdi': registry.npmmirror.com/@iconify-json/mdi/1.1.41
   '@iconify/vue': registry.npmmirror.com/@iconify/vue/4.0.2_vue@3.2.45
+  '@types/js-cookie': registry.npmmirror.com/@types/js-cookie/3.0.2
   '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6
   '@types/marked': registry.npmmirror.com/@types/marked/4.0.8
   '@types/node': registry.npmmirror.com/@types/node/18.11.18
@@ -251,6 +255,12 @@ packages:
     name: '@sxzz/popperjs-es'
     version: 2.11.7
     dev: false
+
+  registry.npmmirror.com/@types/js-cookie/3.0.2:
+    resolution: {integrity: sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/js-cookie/-/js-cookie-3.0.2.tgz}
+    name: '@types/js-cookie'
+    version: 3.0.2
+    dev: true
 
   registry.npmmirror.com/@types/lodash-es/4.17.6:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash-es/-/lodash-es-4.17.6.tgz}
@@ -1117,6 +1127,13 @@ packages:
     name: isexe
     version: 2.0.0
     dev: true
+
+  registry.npmmirror.com/js-cookie/3.0.1:
+    resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/js-cookie/-/js-cookie-3.0.1.tgz}
+    name: js-cookie
+    version: 3.0.1
+    engines: {node: '>=12'}
+    dev: false
 
   registry.npmmirror.com/jsonc-parser/3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jsonc-parser/-/jsonc-parser-3.2.0.tgz}

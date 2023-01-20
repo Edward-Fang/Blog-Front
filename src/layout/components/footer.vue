@@ -2,7 +2,7 @@
   <div class="footer flex j-center a-center flex-column">
     <div class="footer-container flex j-sb">
       <div class="about">
-        <h2>Edward</h2>
+        <h2 @dblclick="toLogin">Edward</h2>
         <p>Front-end Developer</p>
         <router-link to="aboutme">About Me</router-link>
       </div>
@@ -46,7 +46,12 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const router = useRouter()
+const toLogin = () => {
+  router.push('/login')
+}
+</script>
 
 <style lang="scss" scoped>
 .footer {
@@ -65,6 +70,7 @@
   max-width: 1150px;
 
   .about {
+    user-select: none;
     h2 {
       font-size: 3em;
       font-weight: 500;

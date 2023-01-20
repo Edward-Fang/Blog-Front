@@ -47,7 +47,7 @@ const ifShow = ref(true)
 
 .page-container {
   width: 100%;
-  margin: 5rem auto;
+  margin: 7rem auto;
   padding: 0 45px;
 }
 
