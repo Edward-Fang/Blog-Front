@@ -1,7 +1,11 @@
 <template>
-  <div class="main">manage page</div>
+  
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
 
-<style lang="scss" scoped></style>
+</script>
+
+<style lang="scss" scoped>
+
+</style>

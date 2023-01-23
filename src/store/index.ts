@@ -1,6 +1,7 @@
-import { defineStore } from 'pinia'
-export const useUserStore = defineStore('main', {
-  state: () => ({
-    userInfo: null
-  })
-})
+import { useAppStore } from './modules/app'
+import { useUserStore } from './modules/user'
+
+const pinia = createPinia()
+
+export { useAppStore, useUserStore }
+export default pinia

@@ -15,7 +15,7 @@
         >
         <h5>发表于{{ item.createAt }}</h5>
         <h4>
-          {{ item.introduction  }}
+          {{ item.introduction }}
         </h4>
       </div>
     </div>
@@ -25,32 +25,13 @@
 <script setup lang="ts">
 import axios from '@/api'
 
-const posts = ref(<any>[
-  // {
-  //   id: 1,
-  //   title: 1,
-  //   createAt: 1,
-  //   introduction: 1
-  // },
-  // {
-  //   id: 1,
-  //   title: 1,
-  //   createAt: 1,
-  //   introduction: 1
-  // },
-  // {
-  //   id: 1,
-  //   title: 1,
-  //   createAt: 1,
-  //   introduction: 1
-  // }
-])
+const posts = ref(<any>[])
 const getPosts = async (limit: number, offset: number) => {
-  const res = await axios.getPosts({limit, offset})
+  const res = await axios.getPosts({ limit, offset })
   posts.value = res.data ?? []
 }
-onMounted(() => {
-  getPosts(0, 0)
+onBeforeMount(() => {
+  getPosts(6, 0)
 })
 
 const router = useRouter()

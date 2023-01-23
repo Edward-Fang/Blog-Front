@@ -1,8 +1,6 @@
 import axios from 'axios'
-import { useUserStore } from '@/store'
 import { ElMessage } from 'element-plus'
-// import { getToken } from '@/utils/auth'
-
+import { getToken } from '@/utils/auth'
 
 const service = axios.create({
   baseURL: '/api',
@@ -10,11 +8,11 @@ const service = axios.create({
 })
 
 service.interceptors.request.use(
-  config => {
-    // const user = useUserStore()
-    // if (store.getters.token) {
-    //   config.headers['token'] = getToken()
-    // }
+  (config: any) => {
+    const token = getToken()
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`
+    }
     return config
   },
   error => {

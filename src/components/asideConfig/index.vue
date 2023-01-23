@@ -1,14 +1,10 @@
 <template>
   <div class="config-container">
     <div class="btn flex-center" @click="hideAside">
-      <icon
-        :icon="modelValue ? 'mdi:arrow-right-circle' : 'mdi:arrow-left-circle'"
-      />
+      <icon :icon="hide ? 'mdi:arrow-right-circle' : 'mdi:arrow-left-circle'" />
     </div>
     <div class="btn flex-center" @click="changeTheme">
-      <icon
-        :icon="sun ? 'mdi:moon-full' : 'mdi:white-balance-sunny'"
-      />
+      <icon :icon="sun ? 'mdi:moon-full' : 'mdi:white-balance-sunny'" />
     </div>
     <div class="btn flex-center" @click="scrollToTop">
       <icon icon="mdi:arrow-up-circle" />
@@ -17,16 +13,16 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  modelValue: {
-    type: Boolean,
-    default: true
-  }
+import { useAppStore } from '@/store/modules/app'
+const appStore: any = useAppStore()
+const hide = ref(true)
+appStore.$subscribe((mutation: any, state: any) => {
+  hide.value = state.showAside
 })
-const emits = defineEmits(['update:modelValue'])
-
 const hideAside = () => {
-  emits('update:modelValue', !props.modelValue)
+  appStore.$patch({
+    showAside: !hide.value
+  })
 }
 
 const scrollToTop = () => {

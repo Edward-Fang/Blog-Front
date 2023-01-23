@@ -80,13 +80,14 @@ export const basicRoutes = [
 
 export const asyncRoutes = [
   {
-    path: '/create',
-    component: () => import('@/pages/admin/create/index.vue'),
-    meta: { name: '新建博客', icon: 'mdi:note-edit-outline', show: true }
-  },
-  {
-    path: '/manage',
-    component: () => import('@/pages/admin/manage/index.vue'),
-    meta: { name: '管理博客', icon: 'mdi:file-cog-outline', show: true }
+    path: '/admin',
+    component: Layout,
+    children: [
+      {
+        path: '/manage',
+        component: () => import('@/pages/admin/index.vue'),
+        meta: { name: '管理', icon: 'mdi:file-cog-outline', show: true }
+      }
+    ]
   }
 ]
